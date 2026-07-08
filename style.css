@@ -268,3 +268,24 @@ nav a:hover, nav a.active {
     .stats-counter { flex-direction: column; gap: 10px; }
     .soc-buttons { flex-direction: column; align-items: center; }
 }
+/* Стилі для окремого блоку моніторингу */
+.map-block {
+    max-width: 1100px;
+    width: 95%;
+}
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    background: #0d0d0f;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+    .map-wrapper iframe {
+        height: 450px !important;
+    }
+}
