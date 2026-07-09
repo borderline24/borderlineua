@@ -95,17 +95,9 @@
             <p>Інтерактивна карта фронту та детальна аналітика скоро будуть доступні.</p>
         </div>
     </section>
-    <section class="section-block dark-bg" id="losses">
-        <div class="container" style="text-align: center; padding: 60px 20px;">
-            <h2>ЗАГАЛЬНІ ВТРАТИ ВОРОГА</h2>
-            <p style="color: #88888b; margin-bottom: 30px;">Орієнтовні втрати російських окупантів за даними Генштабу ЗСУ.</p>
-            
-            <div class="wrench-icon">🔧</div>
-            <p style="color: #f39c12; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;"> В розробці</p>
-        </div>
-    </section>
+<!-- РОЗДІЛ: ВТРАТИ ВОРОГА -->
 
-    <!-- ПІДТРИМКА (З кнопкою-ботом) -->
+    <!-- ПІДТРИМКА (Зкою-ботом) -->
     <section class="section-block" id="support">
         <div class="container development-block">
             <h2>ЗВ'ЯЗОК ТА ПІДТРИМКА</h2>
@@ -113,6 +105,159 @@
             <a href="https://t.me/Borderlineuabot" target="_blank" class="bot-btn">🤖 Написати в @Borderlineuabot</a>
         </div>
     </section>
+    <section class="section-block dark-bg" id="losses">
+        <div class="container">
+            <h2>ЗАГАЛЬНІ ВТРАТИ ВОРОГА</h2>
+            <p style="margin-bottom: 30px; color: #88888b;">Орієнтовні втрати російських окупантів за даними Генштабу ЗСУ. Оновлюється автоматично.</p>
+            
+            <div class="losses-grid">
+                <div class="loss-card">
+                    <span class="loss-icon">💀</span>
+                    <h3>Особовий склад</h3>
+                    <p class="loss-number" id="loss-personnel-change">...</p>
+                    <span class="loss-total" id="loss-personnel-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🚜</span>
+                    <h3>Танки</h3>
+                    <p class="loss-number" id="loss-tanks-change">...</p>
+                    <span class="loss-total" id="loss-tanks-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🔥</span>
+                    <h3>ББМ</h3>
+                    <p class="loss-number" id="loss-apv-change">...</p>
+                    <span class="loss-total" id="loss-apv-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">💥</span>
+                    <h3>Артилерія</h3>
+                    <p class="loss-number" id="loss-artillery-change">...</p>
+                    <span class="loss-total" id="loss-artillery-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🚀</span>
+                    <h3>РСЗВ (MLRS)</h3>
+                    <p class="loss-number" id="loss-mlrs-change">...</p>
+                    <span class="loss-total" id="loss-mlrs-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🛡️</span>
+                    <h3>Засоби ППО</h3>
+                    <p class="loss-number" id="loss-anti-aircraft-change">...</p>
+                    <span class="loss-total" id="loss-anti-aircraft-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🛩️</span>
+                    <h3>Літаки</h3>
+                    <p class="loss-number" id="loss-aircraft-change">...</p>
+                    <span class="loss-total" id="loss-aircraft-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🛸</span>
+                    <h3>Гвинтокрили</h3>
+                    <p class="loss-number" id="loss-helicopters-change">...</p>
+                    <span class="loss-total" id="loss-helicopters-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">📡</span>
+                    <h3>БПЛА</h3>
+                    <p class="loss-number" id="loss-uav-change">...</p>
+                    <span class="loss-total" id="loss-uav-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">☄️</span>
+                    <h3>Крилаті ракети</h3>
+                    <p class="loss-number" id="loss-cruise-missiles-change">...</p>
+                    <span class="loss-total" id="loss-cruise-missiles-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🚢</span>
+                    <h3>Кораблі та катери</h3>
+                    <p class="loss-number" id="loss-warships-change">...</p>
+                    <span class="loss-total" id="loss-warships-total">Всього: ...</span>
+                    </div>
+                <div class="loss-card">
+                    <span class="loss-icon">⚓</span>
+                    <h3>Підводні човни</h3>
+                    <p class="loss-number" id="loss-submarines-change">...</p>
+                    <span class="loss-total" id="loss-submarines-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">🚛</span>
+                    <h3>Автотехніка та цистерни</h3>
+                    <p class="loss-number" id="loss-vehicles-change">...</p>
+                    <span class="loss-total" id="loss-vehicles-total">Всього: ...</span>
+                </div>
+                <div class="loss-card">
+                    <span class="loss-icon">⚙️</span>
+                    <h3>Спеціальна техніка</h3>
+                    <p class="loss-number" id="loss-special-equipment-change">...</p>
+                    <span class="loss-total" id="loss-special-equipment-total">Всього: ...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        async function fetchLosses() {
+            try {
+                const response = await fetch('https://russianwarship.rip/api/v1/statistics/latest');
+                const result = await response.json();
+                const data = result.data;
+
+                if (!data) return;
+
+                const formatChange = (val) => val > 0 ? +${val} : 0;
+
+                document.getElementById('loss-personnel-change').innerText = formatChange(data.increase.personnel_units);
+                document.getElementById('loss-personnel-total').innerText = Всього: ${data.stats.personnel_units.toLocaleString()};
+
+                document.getElementById('loss-tanks-change').innerText = formatChange(data.increase.tanks);
+                document.getElementById('loss-tanks-total').innerText = Всього: ${data.stats.tanks.toLocaleString()};
+
+                document.getElementById('loss-apv-change').innerText = formatChange(data.increase.armoured_fighting_vehicles);
+                document.getElementById('loss-apv-total').innerText = Всього: ${data.stats.armoured_fighting_vehicles.toLocaleString()};
+
+                document.getElementById('loss-artillery-change').innerText = formatChange(data.increase.artillery_systems);
+                document.getElementById('loss-artillery-total').innerText = Всього: ${data.stats.artillery_systems.toLocaleString()};
+
+                document.getElementById('loss-mlrs-change').innerText = formatChange(data.increase.mlrs);
+                document.getElementById('loss-mlrs-total').innerText = Всього: ${data.stats.mlrs.toLocaleString()};
+
+                document.getElementById('loss-anti-aircraft-change').innerText = formatChange(data.increase.anti_aircraft_warfare_systems);
+                document.getElementById('loss-anti-aircraft-total').innerText = Всього: ${data.stats.anti_aircraft_warfare_systems.toLocaleString()};
+
+                document.getElementById('loss-aircraft-change').innerText = formatChange(data.increase.planes);
+                document.getElementById('loss-aircraft-total').innerText = Всього: ${data.stats.planes.toLocaleString()};
+
+                document.getElementById('loss-helicopters-change').innerText = formatChange(data.increase.helicopters);
+                document.getElementById('loss-helicopters-total').innerText = Всього: ${data.stats.helicopters.toLocaleString()};
+
+                document.getElementById('loss-uav-change').innerText = formatChange(data.increase.uav_systems);
+                document.getElementById('loss-uav-total').innerText = Всього: ${data.stats.uav_systems.toLocaleString()};
+
+                document.getElementById('loss-cruise-missiles-change').innerText = formatChange(data.increase.cruise_missiles);
+                document.getElementById('loss-cruise-missiles-total').innerText = Всього: ${data.stats.cruise_missiles.toLocaleString()};
+                document.getElementById('loss-warships-change').innerText = formatChange(data.increase.warships_cutters);
+                document.getElementById('loss-warships-total').innerText = Всього: ${data.stats.warships_cutters.toLocaleString()};
+
+                document.getElementById('loss-submarines-change').innerText = formatChange(data.increase.submarines);
+                document.getElementById('loss-submarines-total').innerText = Всього: ${data.stats.submarines.toLocaleString()};
+
+                document.getElementById('loss-vehicles-change').innerText = formatChange(data.increase.vehicles_and_fuel_tanks);
+                document.getElementById('loss-vehicles-total').innerText = Всього: ${data.stats.vehicles_and_fuel_tanks.toLocaleString()};
+
+                document.getElementById('loss-special-equipment-change').innerText = formatChange(data.increase.special_equipment);
+                document.getElementById('loss-special-equipment-total').innerText = Всього: ${data.stats.special_equipment.toLocaleString()};
+            } catch (error) {
+                console.error("Помилка завантаження статистики втрат:", error);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', fetchLosses);
+        setInterval(fetchLosses, 600000);
+    </script>
 
     <!-- Скрипти -->
     <script>
