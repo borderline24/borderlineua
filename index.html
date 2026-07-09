@@ -105,6 +105,7 @@
             <a href="https://t.me/Borderlineuabot" target="_blank" class="bot-btn">🤖 Написати в @Borderlineuabot</a>
         </div>
     </section>
+  <!-- РОЗДІЛ: ВТРАТИ ВОРОГА -->
     <section class="section-block dark-bg" id="losses">
         <div class="container">
             <h2>ЗАГАЛЬНІ ВТРАТИ ВОРОГА</h2>
@@ -176,7 +177,7 @@
                     <h3>Кораблі та катери</h3>
                     <p class="loss-number" id="loss-warships-change">...</p>
                     <span class="loss-total" id="loss-warships-total">Всього: ...</span>
-                    </div>
+                </div>
                 <div class="loss-card">
                     <span class="loss-icon">⚓</span>
                     <h3>Підводні човни</h3>
@@ -199,16 +200,18 @@
         </div>
     </section>
 
+    <!-- Автономний скрипт з виправленими косими дужками -->
     <script>
         async function fetchLosses() {
             try {
                 const response = await fetch('https://russianwarship.rip/api/v1/statistics/latest');
+                if (!response.ok) throw new Error('API Error');
                 const result = await response.json();
                 const data = result.data;
 
                 if (!data) return;
 
-                const formatChange = (val) => val > 0 ? +${val} : 0;
+                const formatChange = (val) => val > 0 ? +${val} : '0';
 
                 document.getElementById('loss-personnel-change').innerText = formatChange(data.increase.personnel_units);
                 document.getElementById('loss-personnel-total').innerText = Всього: ${data.stats.personnel_units.toLocaleString()};
@@ -236,9 +239,9 @@
 
                 document.getElementById('loss-uav-change').innerText = formatChange(data.increase.uav_systems);
                 document.getElementById('loss-uav-total').innerText = Всього: ${data.stats.uav_systems.toLocaleString()};
-
                 document.getElementById('loss-cruise-missiles-change').innerText = formatChange(data.increase.cruise_missiles);
                 document.getElementById('loss-cruise-missiles-total').innerText = Всього: ${data.stats.cruise_missiles.toLocaleString()};
+
                 document.getElementById('loss-warships-change').innerText = formatChange(data.increase.warships_cutters);
                 document.getElementById('loss-warships-total').innerText = Всього: ${data.stats.warships_cutters.toLocaleString()};
 
@@ -252,13 +255,14 @@
                 document.getElementById('loss-special-equipment-total').innerText = Всього: ${data.stats.special_equipment.toLocaleString()};
             } catch (error) {
                 console.error("Помилка завантаження статистики втрат:", error);
+                const numbers = document.querySelectorAll('.loss-number');
+                numbers.forEach(el => el.innerText = "Error");
             }
         }
 
         window.addEventListener('DOMContentLoaded', fetchLosses);
         setInterval(fetchLosses, 600000);
     </script>
-
     <!-- Скрипти -->
     <script>
         function updateKyivTime() {
